@@ -1,5 +1,13 @@
-macos_instance:
-  image: ghcr.io/cirruslabs/macos-ventura-base:latest
+arm64_task:
+  arm_macos_instance:
+    image: ghcr.io/cirruslabs/macos-ventura-base:latest
+  script:
+    - echo "Hello World from macOS!"
+    - arch
 
-task:
-  script: echo "Hello World from macOS!"
+x86_64_task:
+  macos_instance:
+    image: ghcr.io/cirruslabs/macos-ventura-base:latest
+  script:
+    - echo "Hello World from macOS!"
+    - arch
